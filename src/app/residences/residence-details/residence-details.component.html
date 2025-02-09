@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Details de la Résidence</h2>
+    <p>ID Résidence: {{ residence?.id }}</p>
+    <p>Nom: {{ residence?.name }}</p>
+    <p>Adresse: {{ residence?.address }}</p>
+    <p>Status: {{ residence?.status }}</p>
+  
+    <div>
+      <button (click)="goToPreviousResidence()" class="btn btn-secondary">Previous</button>
+      <button (click)="goToNextResidence()" class="btn btn-primary">Next</button>
+    </div>
+  
+    <div>
+      <a routerLink="/add-residence" class="btn btn-warning">Add Residence</a>
+      <a routerLink="/add-residence" class="btn btn-secondary">Update Residence</a>
+    </div>
+  </div>
+  
