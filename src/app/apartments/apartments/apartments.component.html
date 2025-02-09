@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Tous les Appartements</h2>
+    <div *ngFor="let apartment of apartments">
+      <p>{{ apartment.apartNum }} - {{ apartment.category }}</p>
+      <a [routerLink]="['/apartments', apartment.ResidenceId]" class="btn btn-info">Appartements par Résidence</a>
+    </div>
+  </div>
+  
