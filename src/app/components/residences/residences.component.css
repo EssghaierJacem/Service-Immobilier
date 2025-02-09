@@ -1,0 +1,79 @@
+.container {
+    max-width: 1200px;
+  }
+  
+  .search-container {
+    width: 400px;
+  }
+  
+  .search-container input {
+    border-left: none;
+  }
+  
+  .search-container .input-group-text {
+    border-right: none;
+  }
+  
+  .residence-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .residence-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .location-text {
+    font-size: 14px;
+    color: #555;
+    background: #f8f9fa;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  
+  .btn.active-like {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .btn.active-like:hover {
+    background: #b92c3d;
+    color: white;
+  }
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .search-container input {
+    border-radius: 50px;
+    padding-left: 30px;
+  }
+  
+  .search-container .input-group-text {
+    border-radius: 50px 0 0 50px;
+    background-color: #007bff;
+  }
+  
+  .card-body .badge {
+    font-size: 1.1rem;
+  }
+  
+  .card-body .btn {
+    width: 100%;
+    border-radius: 25px;
+  }
+  
