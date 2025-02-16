@@ -10,14 +10,14 @@ import { ApartmentsByResidenceComponent } from './apartments/apartments-by-resid
 import { AddApartmentComponent } from './apartments/add-apartment/add-apartment.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'residences', component: ResidencesComponent },
-  { path: 'residences/:id', component: ResidenceDetailsComponent },
-  { path: 'add-residence', component: AddResidenceComponent },
-  { path: 'apartments', component: ApartmentsComponent },
-  { path: 'apartments/:residenceId', component: ApartmentsByResidenceComponent },
-  { path: 'add-apartment', component: AddApartmentComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '', component: HomeComponent, data: { breadcrumb: '🏠 Accueil' } },
+  { path: 'residences', component: ResidencesComponent, data: { breadcrumb: '🏢 Résidences' } },
+  { path: 'residences/:id', component: ResidenceDetailsComponent, data: { breadcrumb: '📄 Détails Résidence' } },
+  { path: 'add-residence', component: AddResidenceComponent, data: { breadcrumb: '➕ Ajouter Résidence' } },
+  { path: 'apartments', component: ApartmentsComponent, data: { breadcrumb: '🏠 Appartements' } },
+  { path: 'apartments/:residenceId', component: ApartmentsByResidenceComponent, data: { breadcrumb: '📌 Appartements par Résidence' } },
+  { path: 'add-apartment', component: AddApartmentComponent, data: { breadcrumb: '➕ Ajouter Appartement' } },
+  { path: '**', component: NotFoundComponent, data: { breadcrumb: '❌ Page Introuvable' } }
 ];
 
 @NgModule({

@@ -5,6 +5,6 @@ export class Apartment {
     terrace!: boolean;
     surfaceterrace!: number;
     category!: string;
-    ResidenceId!: number;
+    ResidenceId!: number;  
   }
   
