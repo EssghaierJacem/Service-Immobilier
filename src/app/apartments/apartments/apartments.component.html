@@ -1,8 +1,22 @@
-<div class="container">
-    <h2>Tous les Appartements</h2>
-    <div *ngFor="let apartment of apartments">
-      <p>{{ apartment.apartNum }} - {{ apartment.category }}</p>
-      <a [routerLink]="['/apartments', apartment.ResidenceId]" class="btn btn-info">Appartements par Résidence</a>
+<div class="container my-4">
+    <h2 class="text-center fw-bold mb-4">🏢 Tous les Appartements</h2>
+  
+    <div class="row">
+      <div class="col-md-6" *ngFor="let apartment of apartments">
+        <div class="card shadow-sm p-3">
+          <h5 class="fw-bold">{{ apartment.apartNum }} - {{ apartment.category }}</h5>
+          <p class="text-muted">Résidence ID: {{ apartment.ResidenceId }}</p>
+          <a [routerLink]="['/apartments', apartment.ResidenceId]" class="btn btn-info btn-sm">
+            <i class="bi bi-building"></i> Appartements par Résidence
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="d-flex justify-content-center mt-4">
+      <a [routerLink]="['/add-apartment']" class="btn btn-success">
+        <i class="bi bi-plus-lg"></i> Ajouter un Appartement
+      </a>
     </div>
   </div>
   

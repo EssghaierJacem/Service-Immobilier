@@ -1,1 +1,45 @@
-<p>add-apartment works!</p>
+<div class="container mt-4">
+  <h2>Ajouter un Appartement</h2>
+  <form [formGroup]="apartForm" (ngSubmit)="addApartment()" class="needs-validation" novalidate>
+      
+      <div class="mb-3">
+          <label for="residenceId" class="form-label">Résidence</label>
+          <input type="text" id="residenceId" class="form-control" formControlName="residenceId" placeholder="Entrez l'ID de la résidence">
+          <div class="text-danger mt-1" *ngIf="apartForm.get('residenceId')?.invalid && apartForm.get('residenceId')?.touched">
+              Résidence est obligatoire.
+          </div>
+      </div>
+
+      <div class="mb-3">
+          <label for="apartmentNumber" class="form-label">Numéro d'Appartement</label>
+          <input type="number" id="apartmentNumber" class="form-control" formControlName="apartmentNumber" placeholder="Ex: 101">
+          <div class="text-danger mt-1" *ngIf="apartForm.get('apartmentNumber')?.invalid && apartForm.get('apartmentNumber')?.touched">
+              Doit être un nombre valide.
+          </div>
+      </div>
+
+      <div class="mb-3">
+          <label for="floorNumber" class="form-label">Numéro d'Étage</label>
+          <input type="number" id="floorNumber" class="form-control" formControlName="floorNumber" placeholder="Ex: 2">
+          <div class="text-danger mt-1" *ngIf="apartForm.get('floorNumber')?.invalid && apartForm.get('floorNumber')?.touched">
+              Doit être un nombre valide.
+          </div>
+      </div>
+
+      <div class="form-check mb-3">
+          <input type="checkbox" id="terrace" class="form-check-input" formControlName="terrace">
+          <label for="terrace" class="form-check-label">Terrasse</label>
+      </div>
+
+      <div class="mb-3">
+          <label for="surfaceTerrace" class="form-label">Surface Terrasse</label>
+          <input type="number" id="surfaceTerrace" class="form-control" formControlName="surfaceTerrace" placeholder="Ex: 20" 
+                 [disabled]="!apartForm.get('terrace')?.value">
+          <div class="text-danger mt-1" *ngIf="apartForm.get('surfaceTerrace')?.invalid && apartForm.get('surfaceTerrace')?.touched">
+              Doit être un nombre valide.
+          </div>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100" [disabled]="apartForm.invalid">Ajouter Appartement</button>
+  </form>
+</div>

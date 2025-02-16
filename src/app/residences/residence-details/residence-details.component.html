@@ -1,18 +1,39 @@
-<div class="container">
-    <h2>Details de la Résidence</h2>
-    <p>ID Résidence: {{ residence?.id }}</p>
-    <p>Nom: {{ residence?.name }}</p>
-    <p>Adresse: {{ residence?.address }}</p>
-    <p>Status: {{ residence?.status }}</p>
-  
-    <div>
-      <button (click)="goToPreviousResidence()" class="btn btn-secondary">Previous</button>
-      <button (click)="goToNextResidence()" class="btn btn-primary">Next</button>
-    </div>
-  
-    <div>
-      <a routerLink="/add-residence" class="btn btn-warning">Add Residence</a>
-      <a routerLink="/add-residence" class="btn btn-secondary">Update Residence</a>
+<div class="container my-4">
+  <h2 class="text-center fw-bold mb-4">🏠 Détails de la Résidence</h2>
+
+  <div class="card shadow-lg p-4">
+    <div class="card-body">
+      <h4 class="card-title">{{ residence?.name }}</h4>
+      <p><strong>ID Résidence:</strong> {{ residence?.id }}</p>
+      <p><strong>Adresse:</strong> {{ residence?.address }}</p>
+      <p><strong>Statut:</strong> 
+        <span class="badge"
+          [ngClass]="{
+            'bg-success': residence?.status === 'Disponible',
+            'bg-danger': residence?.status === 'Vendu',
+            'bg-warning': residence?.status === 'En Construction'
+          }">
+          {{ residence?.status }}
+        </span>
+      </p>
+
+      <div class="d-flex justify-content-between mt-3">
+        <button (click)="goToPreviousResidence()" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left"></i> Précédent
+        </button>
+        <button (click)="goToNextResidence()" class="btn btn-primary">
+          Suivant <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="d-flex justify-content-center gap-2 mt-4">
+        <a routerLink="/add-residence" class="btn btn-warning">
+          <i class="bi bi-plus-lg"></i> Ajouter Résidence
+        </a>
+        <a routerLink="/update-residence" class="btn btn-secondary">
+          <i class="bi bi-pencil-square"></i> Modifier Résidence
+        </a>
+      </div>
     </div>
   </div>
-  
+</div>
