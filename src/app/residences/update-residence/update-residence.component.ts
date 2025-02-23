@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ResidenceService } from 'src/app/core/services/residence.service';
-import { Residence } from 'src/app/core/models/residence';  // Import Residence model
-import { HttpErrorResponse } from '@angular/common/http';  // Import HttpErrorResponse
+import { Residence } from 'src/app/core/models/residence';  
+import { HttpErrorResponse } from '@angular/common/http';  
 
 @Component({
   selector: 'app-update-residence',
@@ -12,8 +12,8 @@ import { HttpErrorResponse } from '@angular/common/http';  // Import HttpErrorRe
 })
 export class UpdateResidenceComponent implements OnInit {
   residenceForm: FormGroup;
-  id: number | undefined;  // Make id optional
-  residence: Residence | undefined;  // Properly type the residence object
+  id: number | undefined; 
+  residence: Residence | undefined;  
 
   constructor(
     private fb: FormBuilder,
@@ -21,9 +21,9 @@ export class UpdateResidenceComponent implements OnInit {
     private router: Router,
     private residenceService: ResidenceService
   ) {
-    // Initialize the form
+
     this.residenceForm = this.fb.group({
-      id: [{ value: '', disabled: true }],  // Disable the 'id' field
+      id: [{ value: '', disabled: true }],  
       name: ['', Validators.required],
       address: ['', Validators.required],
       status: ['', Validators.required],
@@ -32,30 +32,29 @@ export class UpdateResidenceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id')!;  // Retrieve the id from the URL
+    this.id = +this.route.snapshot.paramMap.get('id')!;  
     if (this.id) {
       this.residenceService.getResidenceById(this.id).subscribe({
         next: (data: Residence) => {
           this.residence = data;
-          this.residenceForm.patchValue(this.residence);  // Pre-fill the form with existing data
+          this.residenceForm.patchValue(this.residence);  
         },
         error: (err: HttpErrorResponse) => {
-          console.error('Error retrieving residence:', err.message);  // Handle error
+          console.error('Error retrieving residence:', err.message);  
         },
       });
     }
   }
 
-  // Method to update residence
   updateResidence(): void {
     if (this.residenceForm.valid && this.id) {
       const updatedResidence = { ...this.residenceForm.value };
       this.residenceService.updateResidence(this.id, updatedResidence).subscribe({
         next: () => {
-          this.router.navigate(['/residences']);  // Redirect to residences page after update
+          this.router.navigate(['/residences']);  
         },
         error: (err: HttpErrorResponse) => {
-          console.error('Error updating residence:', err.message);  // Handle error
+          console.error('Error updating residence:', err.message);  
         },
       });
     }
