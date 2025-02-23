@@ -8,6 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ApartmentsComponent } from './apartments/apartments/apartments.component';
 import { ApartmentsByResidenceComponent } from './apartments/apartments-by-residence/apartments-by-residence.component';
 import { AddApartmentComponent } from './apartments/add-apartment/add-apartment.component';
+import { UpdateResidenceComponent } from './residences/update-residence/update-residence.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { breadcrumb: '🏠 Accueil' } },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'apartments', component: ApartmentsComponent, data: { breadcrumb: '🏠 Appartements' } },
   { path: 'apartments/:residenceId', component: ApartmentsByResidenceComponent, data: { breadcrumb: '📌 Appartements par Résidence' } },
   { path: 'add-apartment', component: AddApartmentComponent, data: { breadcrumb: '➕ Ajouter Appartement' } },
+  { path: 'update-residence/:id', component: UpdateResidenceComponent },
   { path: '**', component: NotFoundComponent, data: { breadcrumb: '❌ Page Introuvable' } }
 ];
 

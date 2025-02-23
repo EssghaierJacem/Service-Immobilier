@@ -1,0 +1,40 @@
+<div class="container my-4">
+  <h2 class="text-center fw-bold mb-4">Modifier Résidence</h2>
+
+  <div class="card shadow-lg p-4">
+    <div class="card-body">
+      <form [formGroup]="residenceForm" (ngSubmit)="updateResidence()">
+        <div class="mb-3">
+          <label for="id" class="form-label">ID</label>
+          <input type="text" id="id" class="form-control" formControlName="id" [disabled]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom de la résidence</label>
+          <input type="text" id="name" class="form-control" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label">Adresse</label>
+          <input type="text" id="address" class="form-control" formControlName="address" />
+        </div>
+
+        <div class="mb-3">
+          <label for="status" class="form-label">Statut</label>
+          <select id="status" class="form-control" formControlName="status">
+            <option value="Disponible">Disponible</option>
+            <option value="En Construction">En Construction</option>
+            <option value="Vendu">Vendu</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Image</label>
+          <input type="text" id="image" class="form-control" formControlName="image" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="residenceForm.invalid">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+</div>

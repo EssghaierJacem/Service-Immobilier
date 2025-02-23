@@ -30,7 +30,7 @@
         <a routerLink="/add-residence" class="btn btn-warning">
           <i class="bi bi-plus-lg"></i> Ajouter Résidence
         </a>
-        <a routerLink="/update-residence" class="btn btn-secondary">
+        <a [routerLink]="['/update-residence', residence.id]" class="btn btn-secondary">
           <i class="bi bi-pencil-square"></i> Modifier Résidence
         </a>
       </div>

@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
-
 import { Router } from '@angular/router';
-
+import { ResidenceService } from 'src/app/core/services/residence.service';
 
 @Component({
   selector: 'app-add-residence',
@@ -12,14 +11,18 @@ import { Router } from '@angular/router';
 export class AddResidenceComponent {
   residenceForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private residenceService: ResidenceService,
+    private router: Router
+  ) {
     this.residenceForm = this.fb.group({
       id: [null],
       name: ['', [Validators.required, Validators.minLength(3)]],
       address: ['', Validators.required],
       image: ['', [Validators.required, Validators.pattern('https?://.+')]],
       status: ['Disponible'],
-      apartments: this.fb.array([]) // Liste des appartements
+      apartments: this.fb.array([]) 
     });
   }
 
@@ -41,9 +44,19 @@ export class AddResidenceComponent {
     this.apartments.removeAt(index);
   }
 
-  addResidence() {
+  addResidence(): void {
     if (this.residenceForm.valid) {
-      console.log('Nouvelle résidence ajoutée :', this.residenceForm.value);
+      this.residenceService.getMaxResidenceId().subscribe((maxId) => {
+        const newResidenceId = maxId + 1; 
+        this.residenceForm.patchValue({ id: newResidenceId }); 
+
+        this.residenceService.addResidence(this.residenceForm.value).subscribe(() => {
+          alert('Résidence ajoutée avec succès !');
+          this.router.navigate(['/residences']);
+        });
+      });
+    } else {
+      alert('Veuillez remplir tous les champs correctement.');
     }
   }
 }

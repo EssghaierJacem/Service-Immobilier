@@ -14,7 +14,7 @@
         <img [src]="residence.image" class="card-img-top" alt="{{ residence.name }}">
         <div class="card-body text-center">
           <h5 class="card-title">{{ residence.name }}</h5>
-          
+
           <button (click)="toggleLocation(residence)" class="btn btn-sm btn-outline-info">
             <i class="bi bi-pin-map"></i> Voir Adresse
           </button>
@@ -43,6 +43,10 @@
             <a [routerLink]="['/residences', residence.id]" class="btn btn-sm btn-info">
               <i class="bi bi-eye"></i> Détails
             </a>
+
+            <button (click)="deleteResidence(residence.id)" class="btn btn-sm btn-danger">
+              <i class="bi bi-trash"></i> Supprimer
+            </button>
           </div>
         </div>
       </div>
