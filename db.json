@@ -1,0 +1,168 @@
+{
+  "residences": [
+    {
+      "id": "1",
+      "name": "El Fel",
+      "address": "Borj Cedria",
+      "image": "../../assets/images/R1.jpeg",
+      "status": "Disponible"
+    },
+    {
+      "name": "Jacem",
+      "address": "Ezzahraaaaa",
+      "status": "En Construction",
+      "image": "https://edifia-immobilier.com/images/facade-verdia-1.jpg",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "name": "El Arij",
+      "address": "Rades",
+      "image": "../../assets/images/R3.jpg",
+      "status": "Vendu"
+    },
+    {
+      "id": "4",
+      "name": "El Anber",
+      "address": "Inconnu",
+      "image": "../../assets/images/R4.jpg",
+      "status": "En Construction"
+    },
+    {
+      "id": "5",
+      "name": "El Amen",
+      "address": "Ariana",
+      "image": "../../assets/images/R5.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": "6",
+      "name": "El Razi",
+      "address": "Mannouba",
+      "image": "../../assets/images/R6.jpg",
+      "status": "Vendu"
+    }
+  ],
+  "apartments": [
+    {
+      "apartNum": 101,
+      "floorNum": 1,
+      "surface": 50,
+      "terrace": true,
+      "surfaceterrace": 20,
+      "category": "Luxury",
+      "ResidenceId": 1,
+      "id": "03be"
+    },
+    {
+      "apartNum": 102,
+      "floorNum": 1,
+      "surface": 55,
+      "terrace": false,
+      "surfaceterrace": 0,
+      "category": "Standard",
+      "ResidenceId": 1,
+      "id": "2c68"
+    },
+    {
+      "apartNum": 201,
+      "floorNum": 2,
+      "surface": 75,
+      "terrace": true,
+      "surfaceterrace": 15,
+      "category": "Premium",
+      "ResidenceId": 2,
+      "id": "5bab"
+    },
+    {
+      "apartNum": 202,
+      "floorNum": 2,
+      "surface": 65,
+      "terrace": false,
+      "surfaceterrace": 0,
+      "category": "Standard",
+      "ResidenceId": 2,
+      "id": "e948"
+    },
+    {
+      "apartNum": 301,
+      "floorNum": 3,
+      "surface": 80,
+      "terrace": true,
+      "surfaceterrace": 25,
+      "category": "Luxury",
+      "ResidenceId": 3,
+      "id": "760f"
+    },
+    {
+      "apartNum": 302,
+      "floorNum": 3,
+      "surface": 70,
+      "terrace": false,
+      "surfaceterrace": 0,
+      "category": "Standard",
+      "ResidenceId": 3,
+      "id": "fb5b"
+    },
+    {
+      "apartNum": 401,
+      "floorNum": 4,
+      "surface": 95,
+      "terrace": true,
+      "surfaceterrace": 30,
+      "category": "Penthouse",
+      "ResidenceId": 4,
+      "id": "8063"
+    },
+    {
+      "apartNum": 402,
+      "floorNum": 4,
+      "surface": 85,
+      "terrace": false,
+      "surfaceterrace": 0,
+      "category": "Premium",
+      "ResidenceId": 4,
+      "id": "7add"
+    },
+    {
+      "apartNum": 501,
+      "floorNum": 5,
+      "surface": 60,
+      "terrace": true,
+      "surfaceterrace": 10,
+      "category": "Luxury",
+      "ResidenceId": 5,
+      "id": "5f88"
+    },
+    {
+      "apartNum": 502,
+      "floorNum": 5,
+      "surface": 50,
+      "terrace": false,
+      "surfaceterrace": 0,
+      "category": "Standard",
+      "ResidenceId": 5,
+      "id": "631b"
+    },
+    {
+      "apartNum": 601,
+      "floorNum": 6,
+      "surface": 110,
+      "terrace": true,
+      "surfaceterrace": 35,
+      "category": "Penthouse",
+      "ResidenceId": 6,
+      "id": "202a"
+    },
+    {
+      "apartNum": 602,
+      "floorNum": 6,
+      "surface": 100,
+      "terrace": false,
+      "surfaceterrace": 0,
+      "category": "Premium",
+      "ResidenceId": 6,
+      "id": "aec9"
+    }
+  ]
+}
