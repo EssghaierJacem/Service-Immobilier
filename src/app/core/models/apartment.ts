@@ -7,4 +7,3 @@ export class Apartment {
     category!: string;
     ResidenceId!: number;  
   }
-  

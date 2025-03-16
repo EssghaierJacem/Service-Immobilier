@@ -15,7 +15,15 @@ export class AddResidenceComponent {
     private fb: FormBuilder,
     private residenceService: ResidenceService,
     private router: Router
-  ) {
+  ) 
+
+  // or we can inject through this 
+  // private residenceService = inject(ResidenceService);
+
+  // ken aatak chnoua el fark bin Inject wel appel fl constructeur " 
+  // a9al charge aal constructeur, w facile a lire"
+  
+  {
     this.residenceForm = this.fb.group({
       id: [null],
       name: ['', [Validators.required, Validators.minLength(3)]],
@@ -40,6 +48,65 @@ export class AddResidenceComponent {
     }));
   }
 
+  //Exemple  fel Ts
+  /*
+    addEmployeeForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]), // [10]
+    surname: new FormControl('', [Validators.required]) // [11]
+    });
+  */
+
+    //Implementation fel HTML 
+
+  /*
+    <form [formGroup]="addEmployeeForm">
+      <label>name</label>
+      <input type="text" formControlName="name">
+      <div *ngIf="Name.invalid && Name.touched"> <!-- [12] -->
+        Le nom contient au moins trois caractères
+      </div>
+
+      <label>surname</label>
+      <input type="text" formControlName="surname">
+      <div *ngIf="Surname.invalid && Surname.touched"> <!-- [13] -->
+        Le prénom est obligatoire
+      </div>
+
+      <input type="submit" value="add Employer" (click)="save()" [disabled]="addEmployeeForm.invalid"> <!-- [14] -->
+    </form>
+  */
+
+  //Implementation du Service 
+
+  /*
+  employee!: Employee;
+
+  constructor(private s: CompanyService, private act: ActivatedRoute) {} // [15]
+
+  save() {
+    if (this.addEmployeeForm.valid) { // [16]
+      this.employee = this.addEmployeeForm.value; // [17]
+      let idCompany = this.act.snapshot.params['id']; // [18]
+
+      this.s.findCompanyById(idCompany).subscribe(
+        (result) => {
+          this.employee.company = result;
+          this.s.addEmployee(this.employee).subscribe( // [19] Appel au backend pour ajouter
+            (res) => {
+              console.log('Employé ajouté avec succès');
+            },
+            (err) => {
+              console.log('Erreur lors de l\'ajout');
+            }
+          );
+        }
+      );
+    } else {
+      console.log('formulaire invalide');
+    }
+  }
+    */
+
   removeApartment(index: number) {
     this.apartments.removeAt(index);
   }
@@ -59,4 +126,4 @@ export class AddResidenceComponent {
       alert('Veuillez remplir tous les champs correctement.');
     }
   }
-}
+  }

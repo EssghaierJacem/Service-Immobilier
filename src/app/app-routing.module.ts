@@ -10,7 +10,7 @@ import { ApartmentsByResidenceComponent } from './apartments/apartments-by-resid
 import { AddApartmentComponent } from './apartments/add-apartment/add-apartment.component';
 import { UpdateResidenceComponent } from './residences/update-residence/update-residence.component';
 
-const routes: Routes = [
+const routes: Routes = [ 
   { path: '', component: HomeComponent, data: { breadcrumb: '🏠 Accueil' } },
   { path: 'residences', component: ResidencesComponent, data: { breadcrumb: '🏢 Résidences' } },
   { path: 'residences/:id', component: ResidenceDetailsComponent, data: { breadcrumb: '📄 Détails Résidence' } },
@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'apartments/:residenceId', component: ApartmentsByResidenceComponent, data: { breadcrumb: '📌 Appartements par Résidence' } },
   { path: 'add-apartment', component: AddApartmentComponent, data: { breadcrumb: '➕ Ajouter Appartement' } },
   { path: 'update-residence/:id', component: UpdateResidenceComponent },
-  { path: '**', component: NotFoundComponent, data: { breadcrumb: '❌ Page Introuvable' } }
+  { path: '**', component: NotFoundComponent, data: { breadcrumb: '❌ Page Introuvable' } } // Doit etre en dernier position
+  // {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({
